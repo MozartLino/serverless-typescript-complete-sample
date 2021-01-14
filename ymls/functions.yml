@@ -1,0 +1,19 @@
+SavePartner:
+  handler: index.savePartner
+  iamRoleStatementsName: ${self:service}-${self:provider.stage}-partners-post-lambda-role
+  events:
+    - http:
+        path: partners
+        method: POST
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - X-Amz-Date
+            - Authorization
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+            - Cache-Control
+          allowCredentials: false
+        private: ${self:custom.PRIVATE_HTTP.${self:provider.stage}}

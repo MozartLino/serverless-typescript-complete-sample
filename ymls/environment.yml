@@ -1,0 +1,7 @@
+UTC_TIME: 3
+PORT: 3000
+STAGE: ${self:provider.stage}
+REGION: ${self:provider.region}
+SERVICE: ${self:service}
+MONGO_PARTNER_COLLECTION: partners
+MONGO_HOST: ${self:custom.MONGO_HOST.${self:provider.stage}}

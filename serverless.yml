@@ -1,0 +1,38 @@
+service:
+  name: ze-delivery-test
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  region: ${self:custom.REGIONS.${self:provider.stage}}
+  deploymentBucket:
+    name: ze-${self:custom.DEPLOYMENT_FOLDER.${self:provider.stage}}-sls-deploy
+  stackTags:
+    projectName: ze-delivery
+  environment: ${file(ymls/environment.yml)}
+
+functions: ${file(ymls/functions.yml)}
+custom: ${file(ymls/custom.yml)}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-plugin-log-retention
+  - serverless-iam-roles-per-function
+
+package:
+  exclude:
+    - node_modules/serverless-**
+    - coverage/**
+    - test/**
+    - .nyc_output/**
+    - .gitignore
+    - package-lock.json
+    - README.md
+    - docs/**
+    - .vscode/**
+    - ymls/**
+    - .eslintrc.js
+    - .eslintignore
+    - .editorconfig

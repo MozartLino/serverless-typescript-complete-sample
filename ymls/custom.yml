@@ -1,0 +1,22 @@
+logRetentionInDays: 3
+
+REGIONS:
+  prd: sa-east-1
+  dev: sa-east-1
+  preprd: sa-east-1
+DEPLOYMENT_FOLDER:
+  dev: ze-delivery-dev
+  preprd: ze-delivery-hml
+  prd: ze-delivery-prd
+ACCOUNT_ID:
+  prd: 111111111111
+  preprd: 222222222222
+  dev: 333333333333
+PRIVATE_HTTP:
+  dev: false
+  preprd: false
+  prd: false
+MONGO_HOST:
+  dev: mongodb://dev:password@dev:27017/ze
+  preprd: mongodb://preprd:password@preprd:27017/ze
+  prd: mongodb://prd:password@prd:27017/ze
