@@ -10,6 +10,10 @@ const partnerRepository = new PartnerRepository(mongoHelper, configs.mongo.partn
 const partnerService = new PartnerService(partnerRepository);
 const partnerController = new PartnerController(partnerService);
 
-export const savePartner = (event: any) => {
-  return partnerController.save(event);
+export const postPartner = (event: any) => {
+  return partnerController.post(event);
+};
+
+export const getPartner = (event: any) => {
+  return partnerController.get(event);
 };

@@ -1,5 +1,6 @@
 import { Partner } from './partner';
 
 export interface IPartnerRepository {
-  save(item: Partner): Promise<void>;
+  save(item: Partner): Promise<Partner>;
+  findOne(id: string): Promise<Partner>;
 }

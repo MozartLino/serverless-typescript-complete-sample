@@ -1,5 +1,5 @@
-export type PartnerApplicationModel = {
-  id?: string;
+export type PartnerViewModel = {
+  id: string;
   tradingName: string;
   ownerName: string;
   document: string;
@@ -11,8 +11,4 @@ export type PartnerApplicationModel = {
     type: string;
     coordinates: number[];
   };
-};
-
-export type PartnerApplicationModelId = {
-  id: string;
 };

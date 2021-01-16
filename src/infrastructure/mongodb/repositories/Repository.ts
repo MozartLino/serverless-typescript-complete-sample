@@ -16,4 +16,9 @@ export class Repository<T> {
 
     return result.ops[0];
   }
+
+  public async findOne(filter: any): Promise<T> {
+    const collection = await this.db.getCollection(this.collectionName);
+    return await collection.findOne(filter);
+  }
 }

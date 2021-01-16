@@ -1,37 +1,41 @@
 import Boom = require('boom');
 import { DuplicateKeyException } from '../../domain/exceptions/DuplicateKeyException';
 import { IllegalArgumentException } from '../../domain/exceptions/IllegalArgumentException';
+import { NotFoundPartnerException } from '../../domain/exceptions/NotFoundPartnerException';
 import { SavePartnerException } from '../../domain/exceptions/SavePartnerException';
 import { Logger } from './Logger';
 
 export class Response {
-  constructor() {}
-
-  public static success(result: any, statusCode = 200): ResponseData {
-    return {
+  public static success(result: any, statusCode): ResponseData {
+    const payload = {
       body: JSON.stringify(result),
       statusCode,
     };
+
+    Logger.success(payload);
+
+    return payload;
   }
 
   public static error(error: Error): ResponseData {
-    return this.handler(error).output.payload;
+    Logger.error(error);
+    const payload = this.handler(error).output.payload;
+
+    return {
+      body: JSON.stringify(payload),
+      statusCode: payload.statusCode,
+    };
   }
 
   private static handler(error): Boom {
-    Logger.error(error);
+    const exception = [
+      { errorName: IllegalArgumentException.name, boomMethodName: Boom.badRequest.name },
+      { errorName: DuplicateKeyException.name, boomMethodName: Boom.conflict.name },
+      { errorName: SavePartnerException.name, boomMethodName: Boom.serverUnavailable.name },
+      { errorName: NotFoundPartnerException.name, boomMethodName: Boom.notFound.name },
+    ].find((exception) => exception.errorName === error.constructor.name);
 
-    if (error instanceof IllegalArgumentException) {
-      return Boom.badRequest();
-    }
-    if (error instanceof DuplicateKeyException) {
-      return Boom.conflict();
-    }
-    if (error instanceof SavePartnerException) {
-      return Boom.serverUnavailable();
-    }
-
-    return Boom.internal();
+    return Boom[exception.boomMethodName]();
   }
 }
 

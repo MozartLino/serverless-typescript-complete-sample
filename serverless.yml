@@ -1,5 +1,4 @@
-service:
-  name: ze-delivery-test
+service: ze-delivery-test
 
 provider:
   name: aws
