@@ -7,15 +7,23 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Serverless offline",
+      "program": "${workspaceRoot}/node_modules/serverless/bin/serverless.js",
+      "args": ["offline", "start", "--port=3001"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceFolder}/.build/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Mocha All",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "--no-timeouts",
-        "--colors",
-        "${workspaceFolder}/tests/**/*.test.ts",
-        "--require",
-        "ts-node/register"
-      ],
+      "args": ["--no-timeouts", "--colors", "${workspaceFolder}/test/unit/*.test.ts", "--require", "ts-node/register"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -24,13 +32,7 @@
       "request": "launch",
       "name": "Mocha Current File",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "--no-timeouts",
-        "--colors",
-        "${file}",
-        "--require",
-        "ts-node/register"
-      ],
+      "args": ["--no-timeouts", "--colors", "${file}", "--require", "ts-node/register"],
       "console": "integratedTerminal",
       "sourceMaps": true,
       "internalConsoleOptions": "neverOpen"

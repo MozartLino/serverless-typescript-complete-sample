@@ -1,5 +1,5 @@
 SavePartner:
-  handler: index.savePartner
+  handler: src/presentation/index.savePartner
   iamRoleStatementsName: ${self:service}-${self:provider.stage}-partners-post-lambda-role
   events:
     - http:

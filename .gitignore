@@ -3,3 +3,12 @@ node_modules
 
 # Serverless directories
 .serverless
+
+# dist js files
+.build
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
