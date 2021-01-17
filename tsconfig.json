@@ -3,6 +3,8 @@
     "lib": ["es2017"],
     "module": "commonjs",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,

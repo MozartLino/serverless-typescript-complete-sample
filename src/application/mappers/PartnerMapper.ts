@@ -3,9 +3,6 @@ import { Address } from '../../domain/models/partner/address';
 import { CoverageArea } from '../../domain/models/partner/CoverageArea';
 import { GeojsonType } from '../../domain/models/partner/geojsonType';
 import { Partner } from '../../domain/models/partner/partner';
-import { PartnerApplicationModel } from './PartnerApplicationModel';
-import { PartnerViewModel } from './PartnerViewModel';
-
 export class PartnerMapper {
   public static toDomain(requestPartner: PartnerApplicationModel): Partner {
     try {
@@ -33,21 +30,23 @@ export class PartnerMapper {
       throw new IllegalArgumentException('Invalid request body: error when try to create model partner');
     }
   }
-
-  public static toModelView(partner: Partner): PartnerViewModel {
-    return {
-      id: partner.getId(),
-      tradingName: partner.getTradingName(),
-      ownerName: partner.getOwnerName(),
-      document: partner.getDocumentNumber(),
-      coverageArea: {
-        type: partner.getCoverageAreaType(),
-        coordinates: partner.getCoverageCoordinates(),
-      },
-      address: {
-        type: partner.getAddressType(),
-        coordinates: partner.getAddressCoordinates(),
-      },
-    };
-  }
 }
+
+export type PartnerApplicationModel = {
+  id?: string;
+  tradingName: string;
+  ownerName: string;
+  document: string;
+  coverageArea: {
+    type: string;
+    coordinates: number[][][][];
+  };
+  address: {
+    type: string;
+    coordinates: number[];
+  };
+};
+
+export type PartnerApplicationModelId = { id: string };
+
+export type LocationApplicationModel = { longitude: number; latitude: number };

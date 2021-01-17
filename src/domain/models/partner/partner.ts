@@ -11,6 +11,8 @@ export class Partner {
   private document: Document;
   private coverageArea: CoverageArea;
   private address: Address;
+  public static LONGITUDE = 0;
+  public static LATITUDE = 1;
 
   private constructor(id: string, tradingName: string, ownerName: string, document: Document, coverageArea: CoverageArea, address: Address) {
     this.id = id;

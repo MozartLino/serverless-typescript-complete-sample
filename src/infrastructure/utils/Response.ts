@@ -6,7 +6,7 @@ import { SavePartnerException } from '../../domain/exceptions/SavePartnerExcepti
 import { Logger } from './Logger';
 
 export class Response {
-  public static success(result: any, statusCode): ResponseData {
+  public static success(result: any, statusCode = 200): ResponseData {
     const payload = {
       body: JSON.stringify(result),
       statusCode,
@@ -33,6 +33,7 @@ export class Response {
       { errorName: DuplicateKeyException.name, boomMethodName: Boom.conflict.name },
       { errorName: SavePartnerException.name, boomMethodName: Boom.serverUnavailable.name },
       { errorName: NotFoundPartnerException.name, boomMethodName: Boom.notFound.name },
+      { errorName: undefined, boomMethodName: Boom.internal.name },
     ].find((exception) => exception.errorName === error.constructor.name);
 
     return Boom[exception.boomMethodName]();

@@ -21,4 +21,11 @@ export class Repository<T> {
     const collection = await this.db.getCollection(this.collectionName);
     return await collection.findOne(filter);
   }
+
+  public async find(filter: any): Promise<T[]> {
+    const collection = await this.db.getCollection(this.collectionName);
+    const partnersCursor = await collection.find(filter);
+
+    return partnersCursor.toArray();
+  }
 }

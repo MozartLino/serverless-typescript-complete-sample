@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { PartnerMapper } from '../../src/application/mappers/PartnerMapper';
 import { IllegalArgumentException } from '../../src/domain/exceptions/IllegalArgumentException';
-import * as mocks from '../mocks/partners';
+import * as mocks from '../mocks';
 
 describe('Unit tests for PartnerMapper', () => {
   context('When convert to domain', () => {

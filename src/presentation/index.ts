@@ -1,4 +1,4 @@
-import { PartnerService } from '../application/services/partner';
+import { PartnerService } from '../application/services/partnerService';
 import { Config } from '../infrastructure/config/Config';
 import { PartnerRepository } from '../infrastructure/mongodb/repositories/PartnerRepository';
 import { MongoHelper } from '../infrastructure/utils/MongoHelper';
@@ -16,4 +16,8 @@ export const postPartner = (event: any) => {
 
 export const getPartner = (event: any) => {
   return partnerController.get(event);
+};
+
+export const getPartnerByCoordinates = (event: any) => {
+  return partnerController.getPartnerByCoordinates(event);
 };
