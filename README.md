@@ -7,14 +7,10 @@
 Welcome to Ricardo zé delivery challenge.
 
 ## API running at
-https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners
+https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev
 
-## Requirements
+Get partner ex:  https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a
 
-- Mongodb Server
-- VPC(securityGroup and subnet) with access to mongodb
-- deployment bucket ` (bucket to deploy the lambda code)`
-- An aws user with the following privileges: iam, lambda, apigateway, log, event and s3.
 
 ## Installation
 
@@ -37,6 +33,14 @@ If you don't have serverless installed globally, you can run this one:
 ```
 
 ## Deploy
+
+
+### Requirements to deploy
+
+- Mongodb Server
+- VPC(securityGroup and subnet) with access to mongodb
+- deployment bucket ` (bucket to deploy the lambda code)`
+- An aws user with the following privileges: iam, lambda, apigateway, log, event and s3.
 
 ```
 sls deploy --verbose
@@ -97,13 +101,13 @@ curl --location --request POST 'https://p4mq6uswc1.execute-api.sa-east-1.amazona
 # GET Partner
 
 curl: 
-```
+```js
 curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a'
 ```
 
 # Get Partners by coordinates
 curl: 
-```
+```js
 curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/latitude/20/longitude/30'
 ```
 
