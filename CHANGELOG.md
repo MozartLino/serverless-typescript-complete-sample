@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/ricardo-lino/test-ze-delivery/compare/v1.5.0...v1.5.1) (2021-01-18)
+
+## 1.5.0 (2021-01-18)
+
+
+### Features
+
+* find partner method ([38f4762](https://github.com/ricardo-lino/test-ze-delivery/commit/38f4762f486b5dc11a4bb64bf2eff7af77875fba))
+* find partner nearest a coordinate ([169e812](https://github.com/ricardo-lino/test-ze-delivery/commit/169e81238ea96b494c6f927979b8cb5211676bbc))
+* save partner method ([892964c](https://github.com/ricardo-lino/test-ze-delivery/commit/892964cdf1ffed3eb67615936030e6de8321c686))
+
 ## 1.3.0 (2021-01-17)
 
 

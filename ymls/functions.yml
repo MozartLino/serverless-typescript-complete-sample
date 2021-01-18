@@ -1,6 +1,13 @@
 SavePartner:
   handler: src/presentation/index.postPartner
   iamRoleStatementsName: ${self:service}-${self:provider.stage}-partners-post-lambda-role
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:CreateLogStream
+        - logs:CreateLogGroup
+        - logs:PutLogEvents
+      Resource: arn:*:logs:*:*:log-group:/aws/lambda/${self:service}-*:*:*
   events:
     - http:
         path: partners
@@ -21,6 +28,13 @@ SavePartner:
 GetPartners:
   handler: src/presentation/index.getPartner
   iamRoleStatementsName: ${self:service}-${self:provider.stage}-partners-get-lambda-role
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:CreateLogStream
+        - logs:CreateLogGroup
+        - logs:PutLogEvents
+      Resource: arn:*:logs:*:*:log-group:/aws/lambda/${self:service}-*:*:*
   events:
     - http:
         path: partners/{id}
@@ -37,9 +51,17 @@ GetPartners:
             - Cache-Control
           allowCredentials: false
         private: ${self:custom.PRIVATE_HTTP.${self:provider.stage}}
+
 GetPartnersByCoordinates:
   handler: src/presentation/index.getPartnerByCoordinates
   iamRoleStatementsName: ${self:service}-${self:provider.stage}-partners-get-coordinates-lambda-role
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:CreateLogStream
+        - logs:CreateLogGroup
+        - logs:PutLogEvents
+      Resource: arn:*:logs:*:*:log-group:/aws/lambda/${self:service}-*:*:*
   events:
     - http:
         path: partners/latitude/{latitude}/longitude/{longitude}

@@ -1,0 +1,21 @@
+language: node_js
+
+cache:
+  directories:
+    - $HOME/.npm
+
+node_js:
+  - '10'
+  - '12'
+  - '14'
+
+before_install:
+  - npm i -g npm@6
+
+install:
+  - travis_retry npm install
+  - travis_retry npm install --no-save --ignore-scripts `npx npm-get-version serverless@$SERVERLESS_VERSION`
+
+script:
+  - npm run lint
+  - npm test

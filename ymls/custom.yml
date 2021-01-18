@@ -5,9 +5,9 @@ REGIONS:
   dev: sa-east-1
   preprd: sa-east-1
 DEPLOYMENT_FOLDER:
-  dev: ze-delivery-dev
-  preprd: ze-delivery-hml
-  prd: ze-delivery-prd
+  dev: kadu-sls-deploy-spls
+  preprd: kadu-sls-deploy-sp
+  prd: kadu-sls-deploy-sp
 ACCOUNT_ID:
   prd: 111111111111
   preprd: 222222222222
@@ -17,6 +17,23 @@ PRIVATE_HTTP:
   preprd: false
   prd: false
 MONGO_HOST:
-  dev: mongodb://microservices:a3dAUL5bjH@172.27.19.253:27017/microservices
+  dev: mongodb://preprd:password@preprd:27017/ze
   preprd: mongodb://preprd:password@preprd:27017/ze
   prd: mongodb://prd:password@prd:27017/ze
+SECURITY_GROUP_IDS:
+  prd:
+    - sg-00000000
+  dev:
+    - sg-00000000
+  preprd:
+    - sg-00000000
+SUBNETS_IDS:
+  prd:
+    - subnet-00000000
+    - subnet-00000000
+  dev:
+    - subnet-00000000
+    - subnet-00000000
+  preprd:
+    - subnet-00000000
+    - subnet-00000000

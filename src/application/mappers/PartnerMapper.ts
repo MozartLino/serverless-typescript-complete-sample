@@ -1,6 +1,6 @@
 import { IllegalArgumentException } from '../../domain/exceptions/IllegalArgumentException';
 import { Address } from '../../domain/models/partner/address';
-import { CoverageArea } from '../../domain/models/partner/CoverageArea';
+import { CoverageArea } from '../../domain/models/partner/coverageArea_';
 import { GeojsonType } from '../../domain/models/partner/geojsonType';
 import { Partner } from '../../domain/models/partner/partner';
 export class PartnerMapper {

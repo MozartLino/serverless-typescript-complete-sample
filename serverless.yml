@@ -6,10 +6,16 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: ${self:custom.REGIONS.${self:provider.stage}}
   deploymentBucket:
-    name: ze-${self:custom.DEPLOYMENT_FOLDER.${self:provider.stage}}-sls-deploy
+    name: ${self:custom.DEPLOYMENT_FOLDER.${self:provider.stage}}
   stackTags:
     projectName: ze-delivery
   environment: ${file(ymls/environment.yml)}
+  vpc:
+    securityGroupIds: ${self:custom.SECURITY_GROUP_IDS.${self:provider.stage}}
+    subnetIds: ${self:custom.SUBNETS_IDS.${self:provider.stage}}
+  apiGateway:
+    shouldStartNameWithService: true
+  lambdaHashingVersion: 20201221
 
 functions: ${file(ymls/functions.yml)}
 custom: ${file(ymls/custom.yml)}
