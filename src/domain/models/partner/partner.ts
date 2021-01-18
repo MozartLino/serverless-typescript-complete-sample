@@ -1,8 +1,8 @@
 import { IllegalArgumentException } from '../../exceptions/IllegalArgumentException';
 import { Address } from './address';
-import { CoverageArea } from './coverageArea_';
+import { CoverageArea } from './coverageArea';
 import { Document } from './document';
-import { PartnerBuilder } from './partnerBuilder_';
+import { PartnerBuilder } from './partnerBuilder';
 
 export class Partner {
   private id: string;

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { IllegalArgumentException } from '../../src/domain/exceptions/IllegalArgumentException';
-import { CoverageArea } from '../../src/domain/models/partner/coverageArea_';
+import { CoverageArea } from '../../src/domain/models/partner/coverageArea';
 import { GeojsonType } from '../../src/domain/models/partner/geojsonType';
 
 describe('Unit tests for coverageArea VO', () => {

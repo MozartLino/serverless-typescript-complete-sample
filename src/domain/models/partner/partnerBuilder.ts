@@ -1,5 +1,5 @@
 import { Address } from './address';
-import { CoverageArea } from './coverageArea_';
+import { CoverageArea } from './coverageArea';
 import { Document } from './document';
 import { GeojsonType } from './geojsonType';
 import { Partner } from './partner';

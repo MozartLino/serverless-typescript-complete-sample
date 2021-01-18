@@ -1,6 +1,6 @@
 import { PartnerService } from '../../src/application/services/partnerService';
 import { Address } from '../../src/domain/models/partner/address';
-import { CoverageArea } from '../../src/domain/models/partner/coverageArea_';
+import { CoverageArea } from '../../src/domain/models/partner/coverageArea';
 import { Document } from '../../src/domain/models/partner/document';
 import { GeojsonType } from '../../src/domain/models/partner/geojsonType';
 import { PartnerRepository } from '../../src/infrastructure/mongodb/repositories/PartnerRepository';

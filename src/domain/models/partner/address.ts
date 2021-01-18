@@ -1,6 +1,6 @@
 import { IllegalArgumentException } from '../../exceptions/IllegalArgumentException';
 import { GeojsonType } from './geojsonType';
-import { AddressBuilder } from './partnerBuilder_';
+import { AddressBuilder } from './partnerBuilder';
 
 export class Address {
   private type: GeojsonType;
