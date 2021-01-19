@@ -1,8 +1,11 @@
+import * as geolib from 'geolib';
 import { PartnerService } from '../../src/application/services/partnerService';
 import { Address } from '../../src/domain/models/partner/address';
 import { CoverageArea } from '../../src/domain/models/partner/coverageArea';
 import { Document } from '../../src/domain/models/partner/document';
 import { GeojsonType } from '../../src/domain/models/partner/geojsonType';
+import { PartnerLocation } from '../../src/domain/services/partnerLocation';
+import { Location } from '../../src/infrastructure/geolib/location';
 import { PartnerRepository } from '../../src/infrastructure/mongodb/repositories/PartnerRepository';
 import { MongoHelper } from '../../src/infrastructure/utils/MongoHelper';
 import { partnerGuaianases, partnerPinheiros, simplePartner, partnerGuaianasesSmallCoveregeArea } from './partners';
@@ -20,7 +23,10 @@ export const document = Document.create('111111111/0001');
 
 export const partnerService = async (db: MongoHelper): Promise<PartnerService> => {
   const partnerRepository = new PartnerRepository(db, 'partners');
-  const partnerService = new PartnerService(partnerRepository);
+
+  const location = new Location(geolib);
+  const partnerLocation = new PartnerLocation(location);
+  const partnerService = new PartnerService(partnerRepository, partnerLocation);
 
   return partnerService;
 };

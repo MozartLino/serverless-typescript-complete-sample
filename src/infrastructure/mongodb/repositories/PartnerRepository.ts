@@ -4,7 +4,6 @@ import { SavePartnerException } from '../../../domain/exceptions/SavePartnerExce
 import { GeojsonType } from '../../../domain/models/partner/geojsonType';
 import { IPartnerRepository } from '../../../domain/models/partner/IPartnerRepository';
 import { Partner } from '../../../domain/models/partner/partner';
-import { FindNearest } from '../../geolib/findNearest';
 import { MongoHelper } from '../../utils/MongoHelper';
 import { Util } from '../../utils/util';
 import { CodeException } from '../CodeException';
@@ -58,7 +57,7 @@ export class PartnerRepository implements IPartnerRepository {
     }
   }
 
-  public async findNearestBy(coordinates: number[]): Promise<Partner> {
+  public async findWithin(coordinates: number[]): Promise<Partner[]> {
     try {
       const partnersWithinCoordinates = await this.repository.find(this.createFilter(coordinates));
 
@@ -66,10 +65,7 @@ export class PartnerRepository implements IPartnerRepository {
         throw new NotFoundPartnerException('No partner found in this area');
       }
 
-      const point = { latitude: coordinates[Partner.LATITUDE], longitude: coordinates[Partner.LONGITUDE] };
-      const nearestPartner = FindNearest.from(point, partnersWithinCoordinates);
-
-      return PartnerDBModelMapper.toDomain(nearestPartner);
+      return partnersWithinCoordinates.map((partner) => PartnerDBModelMapper.toDomain(partner));
     } catch (error) {
       if (error instanceof NotFoundPartnerException) {
         throw error;

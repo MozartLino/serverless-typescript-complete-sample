@@ -51,6 +51,14 @@ export class Partner {
     return this.getAddress().getCoordinates();
   }
 
+  public getLatitudeCoverageArea(): number {
+    return this.getAddressCoordinates()[Partner.LATITUDE];  
+  }
+
+  public getLongitudeCoverageArea(): number {
+    return this.getAddressCoordinates()[Partner.LONGITUDE];  
+  }
+
   public getAddressType(): string {
     return this.getAddress().getType();
   }
