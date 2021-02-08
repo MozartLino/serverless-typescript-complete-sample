@@ -1,5 +1,10 @@
 logRetentionInDays: 3
 
+webpack:
+  webpackConfig: 'webpack.config.js'
+  packager: 'npm'
+  includeModules: true
+
 REGIONS:
   prd: sa-east-1
   dev: sa-east-1

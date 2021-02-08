@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["es2017"],
-    "module": "commonjs",
+    "lib": ["ESNext"],
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "removeComments": true,
     "sourceMap": true,
-    "target": "es2017",
-    "outDir": ".build",
-    "rootDir": "./",
-    "typeRoots": ["node_modules/@types"]
+    "target": "ES2019",
+    "outDir": "lib"
   },
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts"]
 }

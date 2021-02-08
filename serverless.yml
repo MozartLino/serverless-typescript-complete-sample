@@ -21,7 +21,7 @@ functions: ${file(ymls/functions.yml)}
 custom: ${file(ymls/custom.yml)}
 
 plugins:
-  - serverless-plugin-typescript
+  - serverless-webpack
   - serverless-offline
   - serverless-plugin-log-retention
   - serverless-iam-roles-per-function
