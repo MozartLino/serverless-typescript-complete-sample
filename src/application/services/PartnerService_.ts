@@ -1,7 +1,7 @@
 import { IPartnerRepository } from '../../domain/models/partner/IPartnerRepository';
 import { PartnerApplicationModel, PartnerApplicationModelId, PartnerMapper } from '../mappers/PartnerMapper';
-import { Partner } from '../../domain/models/partner/partner';
-import { PartnerLocation } from '../../domain/services/partnerLocation';
+import { Partner } from '../../domain/models/partner/Partner_';
+import { PartnerLocation } from '../../domain/services/PartnerLocation_';
 import { CustomerCoordinate } from '../../domain/models/customer/CustomerCoordinate';
 
 export class PartnerService {

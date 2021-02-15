@@ -1,13 +1,13 @@
 import * as geolib from 'geolib';
-import { PartnerService } from '../../src/application/services/partnerService';
-import { Address } from '../../src/domain/models/partner/address';
-import { CoverageArea } from '../../src/domain/models/partner/coverageArea';
-import { Document } from '../../src/domain/models/partner/document';
-import { GeojsonType } from '../../src/domain/models/partner/geojsonType';
-import { PartnerLocation } from '../../src/domain/services/partnerLocation';
-import { Location } from '../../src/infrastructure/geolib/location';
+import { PartnerLocation } from '../../src/domain/services/PartnerLocation_';
+import { Address } from '../../src/domain/models/partner/Address_';
+import { CoverageArea } from '../../src/domain/models/partner/CoverageArea_';
+import { Document } from '../../src/domain/models/partner/Document_';
+import { GeojsonType } from '../../src/domain/models/partner/GeojsonType_';
 import { PartnerRepository } from '../../src/infrastructure/mongodb/repositories/PartnerRepository';
 import { MongoHelper } from '../../src/infrastructure/utils/MongoHelper';
+import { Location } from '../../src/infrastructure/geolib/Location_1';
+import { PartnerService } from '../../src/application/services/PartnerService_'
 import { partnerGuaianases, partnerPinheiros, simplePartner, partnerGuaianasesSmallCoveregeArea } from './partners';
 
 export const partnerMock = simplePartner;

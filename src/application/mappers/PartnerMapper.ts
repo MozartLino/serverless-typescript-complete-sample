@@ -1,8 +1,8 @@
 import { IllegalArgumentException } from '../../domain/exceptions/IllegalArgumentException';
-import { Address } from '../../domain/models/partner/address';
-import { CoverageArea } from '../../domain/models/partner/coverageArea';
-import { GeojsonType } from '../../domain/models/partner/geojsonType';
-import { Partner } from '../../domain/models/partner/partner';
+import { Address } from '../../domain/models/partner/Address_';
+import { CoverageArea } from '../../domain/models/partner/CoverageArea_';
+import { GeojsonType } from '../../domain/models/partner/GeojsonType_';
+import { Partner } from '../../domain/models/partner/Partner_';
 export class PartnerMapper {
   public static toDomain(requestPartner: PartnerApplicationModel): Partner {
     try {

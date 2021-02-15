@@ -1,5 +1,5 @@
 import { ILocation } from './ILocation';
-import { Partner } from '../models/partner/partner';
+import { Partner } from '../models/partner/Partner_';
 import { CustomerCoordinate } from '../models/customer/CustomerCoordinate';
 
 export class PartnerLocation {

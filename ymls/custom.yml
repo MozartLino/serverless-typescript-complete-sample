@@ -22,7 +22,7 @@ PRIVATE_HTTP:
   preprd: false
   prd: false
 MONGO_HOST:
-  dev: mongodb://preprd:password@preprd:27017/ze
+  dev: mongodb://microservices:a3dAUL5bjH@172.27.19.253:27017/microservices
   preprd: mongodb://preprd:password@preprd:27017/ze
   prd: mongodb://prd:password@prd:27017/ze
 SECURITY_GROUP_IDS:

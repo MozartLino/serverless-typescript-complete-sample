@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { IllegalArgumentException } from '../../src/domain/exceptions/IllegalArgumentException';
-import { Partner } from '../../src/domain/models/partner/partner';
+import { Partner } from '../../src/domain/models/partner/Partner_';
 import * as mocks from '../mocks';
 
 describe('Unit tests for Partner model', () => {

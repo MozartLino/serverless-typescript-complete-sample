@@ -1,4 +1,4 @@
-import Boom = require('boom');
+import * as Boom from 'boom';
 import { DuplicateKeyException } from '../../domain/exceptions/DuplicateKeyException';
 import { IllegalArgumentException } from '../../domain/exceptions/IllegalArgumentException';
 import { NotFoundPartnerException } from '../../domain/exceptions/NotFoundPartnerException';
@@ -36,7 +36,7 @@ export class Response {
       { errorName: undefined, boomMethodName: Boom.internal.name },
     ].find((exception) => exception.errorName === error.constructor.name);
 
-    return Boom[exception.boomMethodName]();
+    return (Boom[exception.boomMethodName] || Boom.internal)();
   }
 }
 

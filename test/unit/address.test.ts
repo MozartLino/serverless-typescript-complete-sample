@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { IllegalArgumentException } from '../../src/domain/exceptions/IllegalArgumentException';
-import { Address } from '../../src/domain/models/partner/address';
-import { GeojsonType } from '../../src/domain/models/partner/geojsonType';
+import { Address } from '../../src/domain/models/partner/Address_';
+import { GeojsonType } from '../../src/domain/models/partner/GeojsonType_';
 
 describe('Unit tests for Address VO', () => {
   context('When creating a address', () => {
