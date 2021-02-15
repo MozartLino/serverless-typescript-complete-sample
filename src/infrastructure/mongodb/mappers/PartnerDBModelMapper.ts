@@ -1,7 +1,7 @@
-import { Address } from '../../../domain/models/partner/Address_';
-import { CoverageArea } from '../../../domain/models/partner/CoverageArea_';
-import { GeojsonType } from '../../../domain/models/partner/GeojsonType_';
-import { Partner } from '../../../domain/models/partner/Partner_';
+import { Address } from '../../../domain/models/partner/Address';
+import { CoverageArea } from '../../../domain/models/partner/CoverageArea';
+import { GeojsonType } from '../../../domain/models/partner/GeojsonType';
+import { Partner } from '../../../domain/models/partner/Partner';
 import { PartnerDBModel } from '../models/PartnerDBModel';
 
 export class PartnerDBModelMapper {

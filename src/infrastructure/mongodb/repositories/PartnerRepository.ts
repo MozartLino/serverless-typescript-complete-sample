@@ -1,11 +1,11 @@
 import { DuplicateKeyException } from '../../../domain/exceptions/DuplicateKeyException';
 import { NotFoundPartnerException } from '../../../domain/exceptions/NotFoundPartnerException';
 import { SavePartnerException } from '../../../domain/exceptions/SavePartnerException';
-import { GeojsonType } from '../../../domain/models/partner/GeojsonType_';
+import { GeojsonType } from '../../../domain/models/partner/GeojsonType';
 import { IPartnerRepository } from '../../../domain/models/partner/IPartnerRepository';
-import { Partner } from '../../../domain/models/partner/Partner_';
+import { Partner } from '../../../domain/models/partner/Partner';
 import { MongoHelper } from '../../utils/MongoHelper';
-import { Util } from '../../utils/Util_';
+import { Util } from '../../utils/Util';
 import { CodeException } from '../CodeException';
 import { PartnerDBModelMapper } from '../mappers/PartnerDBModelMapper';
 import { PartnerDBModel } from '../models/PartnerDBModel';

@@ -1,12 +1,12 @@
 import { IllegalArgumentException } from '../../exceptions/IllegalArgumentException';
-import { GeojsonType } from './GeojsonType_';
-import { AddressBuilder } from './PartnerBuilder';
+import { GeojsonType } from './GeojsonType';
+import { CoverageAreaBuilder } from './PartnerBuilder';
 
-export class Address {
+export class CoverageArea {
   private type: GeojsonType;
-  private coordinates: number[];
+  private coordinates: number[][][][];
 
-  private constructor(type: GeojsonType, coordinates: number[]) {
+  private constructor(type: GeojsonType, coordinates: number[][][][]) {
     this.type = type;
     this.coordinates = coordinates;
   }
@@ -15,11 +15,11 @@ export class Address {
     return this.type;
   }
 
-  public getCoordinates(): number[] {
+  public getCoordinates(): number[][][][] {
     return this.coordinates;
   }
 
-  static create(type: GeojsonType, coordinates: number[]): Address {
+  public static create(type: GeojsonType, coordinates: number[][][][]) {
     if (!type) {
       throw new IllegalArgumentException('Property type must be defined');
     }
@@ -28,10 +28,10 @@ export class Address {
       throw new IllegalArgumentException('Property coordinates must be defined');
     }
 
-    return new Address(type, coordinates);
+    return new CoverageArea(type, coordinates);
   }
 
-  public static builder(): AddressBuilder {
-    return new AddressBuilder();
+  public static builder(): CoverageAreaBuilder {
+    return new CoverageAreaBuilder();
   }
 }

@@ -1,4 +1,4 @@
-import { Partner } from './Partner_';
+import { Partner } from './Partner';
 
 export interface IPartnerRepository {
   save(item: Partner): Promise<Partner>;

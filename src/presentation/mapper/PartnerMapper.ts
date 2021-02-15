@@ -1,4 +1,4 @@
-import { Partner } from '../../domain/models/partner/Partner_';
+import { Partner } from '../../domain/models/partner/Partner';
 import { PartnerViewModel } from '../model/PartnerViewModel';
 
 export class PartnerMapper {

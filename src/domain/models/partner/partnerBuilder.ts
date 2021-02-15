@@ -1,8 +1,8 @@
-import { Address } from './Address_';
-import { CoverageArea } from './CoverageArea_';
-import { Document } from './Document_';
-import { GeojsonType } from './GeojsonType_';
-import { Partner } from './Partner_';
+import { Address } from './Address';
+import { CoverageArea } from './CoverageArea';
+import { Document } from './Document';
+import { GeojsonType } from './GeojsonType';
+import { Partner } from './Partner';
 
 export class PartnerBuilder {
   private id: string;

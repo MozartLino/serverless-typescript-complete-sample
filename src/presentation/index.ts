@@ -1,8 +1,8 @@
 import * as geolib from 'geolib';
-import { PartnerService } from '../application/services/PartnerService_';
-import { PartnerLocation } from '../domain/services/PartnerLocation_';
+import { PartnerService } from '../application/services/PartnerService';
+import { PartnerLocation } from '../domain/services/PartnerLocation';
 import { Config } from '../infrastructure/config/Config';
-import { Location } from '../infrastructure/geolib/Location_1';
+import { Location } from '../infrastructure/geolib/Location';
 import { PartnerRepository } from '../infrastructure/mongodb/repositories/PartnerRepository';
 import { MongoHelper } from '../infrastructure/utils/MongoHelper';
 import { PartnerController } from './controllers/PartnerController';

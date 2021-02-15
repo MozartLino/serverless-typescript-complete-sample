@@ -1,5 +1,5 @@
 import { Request } from '../../infrastructure/utils/Request';
-import { PartnerService } from '../../application/services/PartnerService_';
+import { PartnerService } from '../../application/services/PartnerService';
 import { Response, ResponseData } from '../../infrastructure/utils/Response';
 import { LocationApplicationModel, PartnerApplicationModel, PartnerApplicationModelId } from '../../application/mappers/PartnerMapper';
 import { PartnerMapper } from '../mapper/PartnerMapper';
