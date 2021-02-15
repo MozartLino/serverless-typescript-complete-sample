@@ -7,10 +7,10 @@
 Welcome to Ricardo zé delivery challenge.
 
 ## API running at
+
 https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev
 
-Get partner ex:  https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a
-
+Get partner ex: https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a
 
 ## Installation
 
@@ -33,7 +33,6 @@ If you don't have serverless installed globally, you can run this one:
 ```
 
 ## Deploy
-
 
 ### Requirements to deploy
 
@@ -75,7 +74,8 @@ npm test
 
 ## Save partner
 
-curl: 
+curl:
+
 ```js
 curl --location --request POST 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners' \
 --header 'Content-Type: application/json' \
@@ -83,14 +83,14 @@ curl --location --request POST 'https://p4mq6uswc1.execute-api.sa-east-1.amazona
   "tradingName": "Adega da Cerveja - Pinheiros",
   "ownerName": "Zé da Silva",
   "document": "1432132123891/0001",
-  "coverageArea": { 
-    "type": "MultiPolygon", 
+  "coverageArea": {
+    "type": "MultiPolygon",
     "coordinates": [
-      [[[30, 20], [45, 40], [10, 40], [30, 20]]], 
+      [[[30, 20], [45, 40], [10, 40], [30, 20]]],
       [[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]]
     ]
   },
-  "address": { 
+  "address": {
     "type": "Point",
     "coordinates": [-46.57421, -21.785741]
   }
@@ -100,17 +100,19 @@ curl --location --request POST 'https://p4mq6uswc1.execute-api.sa-east-1.amazona
 
 # GET Partner
 
-curl: 
+curl:
+
 ```js
 curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a'
 ```
 
 # Get Partners by coordinates
-curl: 
+
+curl:
+
 ```js
 curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/latitude/20/longitude/30'
 ```
-
 
 ## Contributing
 
@@ -125,7 +127,7 @@ curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaw
 
 [sls-image]: http://public.serverless.com/badges/v3.svg
 [sls-url]: http://www.serverless.com
-[travis-image]: https://travis-ci.com/ricardo-lino/test-ze-delivery.svg?token=aJRRfnEXpnSoXxWf96zv&branch=master
-[travis-url]: https://travis-ci.com/github/ricardo-lino/test-ze-delivery
-[coveralls-image]: https://coveralls.io/repos/github/ricardo-lino/test-ze-delivery/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/ricardo-lino/test-ze-delivery?branch=master
+[travis-image]: https://travis-ci.com/MozartLino/test-ze-delivery.svg?token=aJRRfnEXpnSoXxWf96zv&branch=master
+[travis-url]: https://travis-ci.com/github/MozartLino/test-ze-delivery
+[coveralls-image]: https://coveralls.io/repos/github/MozartLino/test-ze-delivery/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/MozartLino/test-ze-delivery?branch=master
