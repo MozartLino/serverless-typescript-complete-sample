@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "build": "npm run lint && npm run tsc",
-    "test": "tslint src/**/*.ts && npm run test:coverage",
+    "test": "tslint src/**/*.ts && npm run test:coverage | coveralls",
     "test:unit": "mocha -r ts-node/register test/unit/*.test.ts --colors",
     "test:integration": "mocha -r ts-node/register test/integration/*.test.ts --colors",
     "lint": "tslint src/**/*.ts",
