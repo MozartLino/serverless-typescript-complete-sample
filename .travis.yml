@@ -9,6 +9,12 @@ node_js:
   - '12'
   - '14'
 
+env:
+  - SERVERLESS_VERSION=latest COV_PUB=true DEPLOY=true
+  - SERVERLESS_VERSION=latest~1
+  - SERVERLESS_VERSION=latest~2
+
+
 before_install:
   - npm i -g npm@6
 
@@ -19,3 +25,5 @@ install:
 script:
   - npm run lint
   - npm test
+
+after_success: test -z "$COV_PUB" || npm run coverage
