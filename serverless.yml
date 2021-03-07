@@ -1,4 +1,4 @@
-service: ze-delivery-test
+service: serverless-typescript-complete-sample
 
 provider:
   name: aws
@@ -8,7 +8,7 @@ provider:
   deploymentBucket:
     name: ${self:custom.DEPLOYMENT_FOLDER.${self:provider.stage}}
   stackTags:
-    projectName: ze-delivery
+    projectName: typescript-sample-project
   environment: ${file(ymls/environment.yml)}
   vpc:
     securityGroupIds: ${self:custom.SECURITY_GROUP_IDS.${self:provider.stage}}
@@ -25,6 +25,7 @@ plugins:
   - serverless-offline
   - serverless-plugin-log-retention
   - serverless-iam-roles-per-function
+  - serverless-plugin-canary-deployments
 
 package:
   exclude:

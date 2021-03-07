@@ -1,16 +1,10 @@
-# Zé Delivery Challenge
+# Serverless Typescript complete sample project
 
 [![serverless][sls-image]][sls-url]
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 
-Welcome to Ricardo zé delivery challenge.
-
-## API running at
-
-https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev
-
-Get partner ex: https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a
+Welcome to Ricardo serverless typescript aws sample project.
 
 ## Installation
 
@@ -61,7 +55,7 @@ There are two indexes to be create
 
 ```
 partners.createIndex({ document: 1 }, { unique: true });
-partners.db.collection.createIndex( { 'coverageArea' : "2dsphere" } )
+partners.createIndex( { 'coverageArea' : "2dsphere" } )
 ```
 
 ## Run unit and integration tests
@@ -77,11 +71,11 @@ npm test
 curl:
 
 ```js
-curl --location --request POST 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners' \
+curl --location --request POST 'https://xxxxxxx.execute-api.sa-east-1.amazonaws.com/dev/partners' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "tradingName": "Adega da Cerveja - Pinheiros",
-  "ownerName": "Zé da Silva",
+  "tradingName": "Partner store - Pinheiros",
+  "ownerName": "partner name",
   "document": "1432132123891/0001",
   "coverageArea": {
     "type": "MultiPolygon",
@@ -103,7 +97,7 @@ curl --location --request POST 'https://p4mq6uswc1.execute-api.sa-east-1.amazona
 curl:
 
 ```js
-curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a'
+curl --location --request GET 'https://xxxxxxx.execute-api.sa-east-1.amazonaws.com/dev/partners/91e87cbc-8e2f-4c87-902a-c0c3d239c20a'
 ```
 
 # Get Partners by coordinates
@@ -111,7 +105,7 @@ curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaw
 curl:
 
 ```js
-curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaws.com/dev/partners/latitude/20/longitude/30'
+curl --location --request GET 'https://xxxxxxx.execute-api.sa-east-1.amazonaws.com/dev/partners/latitude/20/longitude/30'
 ```
 
 ## Contributing
@@ -127,7 +121,7 @@ curl --location --request GET 'https://p4mq6uswc1.execute-api.sa-east-1.amazonaw
 
 [sls-image]: http://public.serverless.com/badges/v3.svg
 [sls-url]: http://www.serverless.com
-[travis-image]: https://travis-ci.com/MozartLino/test-ze-delivery.svg?token=aJRRfnEXpnSoXxWf96zv&branch=master
-[travis-url]: https://travis-ci.com/github/MozartLino/test-ze-delivery
-[coveralls-image]: https://coveralls.io/repos/github/MozartLino/test-ze-delivery/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/MozartLino/test-ze-delivery?branch=master
+[travis-image]: https://travis-ci.com/MozartLino/serverless-typescript-complete-sample.svg?token=aJRRfnEXpnSoXxWf96zv&branch=master
+[travis-url]: https://travis-ci.com/github/MozartLino/serverless-typescript-complete-sample
+[coveralls-image]: https://coveralls.io/repos/github/MozartLino/serverless-typescript-complete-sample/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/MozartLino/serverless-typescript-complete-sample?branch=master

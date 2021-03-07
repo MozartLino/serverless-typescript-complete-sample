@@ -24,6 +24,9 @@ SavePartner:
             - Cache-Control
           allowCredentials: false
         private: ${self:custom.PRIVATE_HTTP.${self:provider.stage}}
+  deploymentSettings:
+    type: Canary10Percent10Minutes
+    alias: SavePartnerAlias
 
 GetPartners:
   handler: src/presentation/index.getPartner
@@ -35,6 +38,9 @@ GetPartners:
         - logs:CreateLogGroup
         - logs:PutLogEvents
       Resource: arn:*:logs:*:*:log-group:/aws/lambda/${self:service}-*:*:*
+  deploymentSettings:
+    type: Linear10PercentEvery3Minutes
+    alias: GetPartnersAlias
   events:
     - http:
         path: partners/{id}
